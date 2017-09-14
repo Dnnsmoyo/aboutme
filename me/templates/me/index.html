@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+{% block head %}
+<head>
+<link rel = "stylesheet" href = "{% static 'photos/site.css' %}">
+<link rel = "stylesheet" href = "{% static 'photos' %}">
+<div class="page
+<div class ="page-header">
+<div class="links">
+<a style="color:white" href="#">DENNIS MOYO</a>
+{% if user.is_authenticated %}
+    <a href="{% url 'me:post_edit' %}">Add</a>
+{% endif %}
+<a href = "{% url 'me:post_list' %}">Blog</a>
+<a href="#projects">Portfolio</a>
+<a href="#sect">Me</a>
+<a href="#">Home</a>
+</div>
+<div class="wrapper">
+<button><a href="{% static 'photos/pitch.pdf' %}" download>Download CV</a></button>
+<br><br>
+</div>
+</div>
+</head>
+{% endblock %}
+{% block body %}
+<body><br>
+<center><p style="font-family:italic;font-size:30px";>'One programmer to rule them all'</p></center>
+<div style="background-color:aqua"id ="sect">
+<center><h1 style="font-size:35px;font-style:italic">About Me</h1></center>
+<center>
+<img src ="{% static 'photos/cybernetic_guy_hooded.jpg' %}" width="300">
+</center>
+<h3 style="line-spacing:10px">I am self taught(sort of)web programmer who builds programs and finds solutions to everyday problems.I enjoy learning new things and creating new things from my imagination.My creations are not limited to programming, but they also range to fields including music,dance and writing. I am also a hobbyist blogger and hobbyist life/business coach. I enjoy teaching people life skills and helping them in different areas of their lives.Programming is just a part of improving the world as they are more ways in which i plan to impact the world.</h3>
+<p style="font-size:35px;color:white">Things that i do</p>
+<div class ="cols-sm-10" style="font-size:40px;font-style:sans-serif">
+<p>Web scraping</p>
+<p>Api building and integration</p>
+<p>Website design and creation</p>
+<p>Database management</p>
+<p>Git,git and more git</p>
+<p>Learning</p>
+<p>Composing songs for fun</p>
+</div>
+<h1>Tools/Technologies</h1>
+<center>
+<table>
+<tr>
+<td style="font-size:20px;font-family:bold">Language</td>
+<td>Python</td>
+<td>Django</td>
+<td>Mysql</td>
+<td>Javascript</td>
+<td>Nodejs</td>
+</tr>
+<tr>
+<td style="font-size:20px;font-family:bold">Rating</td>
+<td>10/10</td>
+<td>10/10</td>
+<td>10/10</td>
+<td>10/10</td>
+<td>10/10</td>
+</tr>
+<tr>
+<td style="font-size:20px;font-family:bold">Expertise</td>
+<td>7/10</td>
+<td>7/10</td>
+<td>9/10</td>
+<td>8/10</td>
+<td>8/10</td>
+</tr>
+</table>
+</center>
+<br>
+</div>
+<div id="projects">
+<img src="{% static 'photos/DRF.png' %}" >
+</div>
+<br>
+<div id="contact">
+</div>
+</body>
+{% endblock %}
